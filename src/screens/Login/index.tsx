@@ -9,10 +9,17 @@ const styles = StyleSheet.create({
 
 export function Login() {
     return (
-        <ScrollView style={styles.background}>
-            <Text>
-                Olá
-            </Text>
-        </ScrollView>
+        <View style={{
+            flexDirection: "column",
+            height: 100,
+            padding: 20,
+            backgroundColor:"#1A1A1A",
+            flex: 1
+        }}>
+            <Text>Hello, Lucas</Text>
+            <View style={{ backgroundColor: '#333333', flex: 0.5,borderRadius:15 }} />
+            <View style={{ backgroundColor: '#333333', flex: 0.5,borderRadius:15 }} />
+        </View>
+
     )
 }
