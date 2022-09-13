@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         height: 100,
         padding: 20,
         backgroundColor: "#1A1A1A",
-        flex: 0.4
+        flex: 1
     },
     background: {
         backgroundColor: "#1A1A1A",
@@ -28,5 +28,14 @@ export const styles = StyleSheet.create({
         borderRadius: 37,
         fontWeight: "bold",
         color: 'white'
+    },
+    competitionsTitle:{
+        marginTop:20,
+        fontWeight:'bold',
+        fontSize:20
+
+    },
+    competitionsViewUpper:{
+        flexDirection:'column'
     }
 });

@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, Image, ScrollView, Pressable } from "react-native";
+import CompetitionCard from "../../components/CompetitionsCard";
 import { HomeCard } from "../../components/HomeCard";
 import { styles } from "./styles";
 
@@ -17,8 +18,11 @@ export function Home() {
                     <Text style={styles.navButton}>Achievements</Text>
                 </Pressable>
             </View>
-
             <HomeCard />
+            <View style={styles.competitionsViewUpper}>
+                <Text style={styles.competitionsTitle}>Competitions</Text>
+                <CompetitionCard />
+            </View>
         </View>
 
     )

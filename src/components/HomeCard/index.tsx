@@ -1,14 +1,18 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
+import { ProgressBar, MD3Colors } from "react-native-paper";
 
 export function HomeCard() {
     return (
-        <View style={styles.dailyProgressCard}>
-            <Text style={styles.cardTitle}>
-                Progresso Diário
-            </Text>
-        </View>
-
+        <TouchableOpacity style={styles.dailyProgressCard}>
+            <View>
+                <Text style={styles.cardTitle}>
+                    Progresso Diário
+                </Text>
+                <Text style={styles.detail}>35%</Text>
+                <ProgressBar style={styles.progressBar} progress={0.35} color="#1E90FF" />
+            </View>
+        </TouchableOpacity>
     )
 }
