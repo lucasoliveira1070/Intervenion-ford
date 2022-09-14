@@ -1,10 +1,13 @@
-import React from "react";
+import { useNavigation } from "@react-navigation/native";
+import React, { useState } from "react";
 import { View, Text, Image, ScrollView, Pressable } from "react-native";
 import CompetitionCard from "../../components/CompetitionsCard";
 import { HomeCard } from "../../components/HomeCard";
 import { styles } from "./styles";
 
 export function Home() {
+    const [loading, setLoading] = useState(true);
+
     return (
         <View style={styles.mainView}>
             <View style={styles.rowView}>
@@ -21,7 +24,9 @@ export function Home() {
             <HomeCard />
             <View style={styles.competitionsViewUpper}>
                 <Text style={styles.competitionsTitle}>Competitions</Text>
-                <CompetitionCard />
+                <View>
+                    <CompetitionCard />
+                </View>
             </View>
         </View>
 
