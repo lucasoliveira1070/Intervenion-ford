@@ -30,12 +30,13 @@ export const styles = StyleSheet.create({
         color: 'white'
     },
     competitionsTitle:{
-        marginTop:20,
         fontWeight:'bold',
         fontSize:20
 
     },
     competitionsViewUpper:{
-        flexDirection:'column'
+        flexDirection:'column',
+        marginTop:20,
+        flex:0.7
     }
 });

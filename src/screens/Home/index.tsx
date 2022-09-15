@@ -23,10 +23,22 @@ export function Home() {
             </View>
             <HomeCard />
             <View style={styles.competitionsViewUpper}>
-                <Text style={styles.competitionsTitle}>Competitions</Text>
-                <View>
-                    <CompetitionCard />
+                <View style={{ flexDirection: 'column' }}>
+                    <Text style={styles.competitionsTitle}>Competitions</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                        <View style={{ flexDirection: 'row', flex: 1 }}>
+                            <CompetitionCard data={{ title: 'Ford Family', icon: 'account-group', color: '#1E90FF' }} />
+                            <CompetitionCard data={{ title: 'Ford Trip', icon: 'account-group', color: '#FFAB1E' }} />
+                        </View>
+                    </View>
+                    <View style={{ flexDirection: 'row' }}>
+                        <View style={{ flexDirection: 'row', flex: 1 }}>
+                            <CompetitionCard data={{ title: 'While Ford', icon: 'account-group', color: '#BC62FF' }} />
+                            <CompetitionCard data={{ title: 'Ford Fidelity', icon: 'account-group', color: '#7FFF62' }} />
+                        </View>
+                    </View>
                 </View>
+
             </View>
         </View>
 

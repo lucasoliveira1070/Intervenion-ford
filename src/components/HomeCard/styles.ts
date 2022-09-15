@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     dailyProgressCard: {
         backgroundColor: "#333333",
         flexDirection: "column",
-        flex: 0.3,
+        flex: 0.28,
         borderRadius: 15,
         marginTop: 20
     },

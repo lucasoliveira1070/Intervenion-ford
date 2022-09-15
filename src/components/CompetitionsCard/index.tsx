@@ -1,15 +1,24 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import { Button } from "react-native-paper";
+import { RectButtonProps } from "react-native-gesture-handler";
+import { Avatar, ProgressBar } from "react-native-paper";
 import { styles } from "./styles";
 
-export default function CompetitionCard() {
+interface Props extends RectButtonProps {
+    data: {
+        title: string,
+        icon: string,
+        color: string
+    }
+}
+
+export default function CompetitionCard({ data }: Props) {
+    let backgroundColor: string = data.color;
     return (
         <TouchableOpacity style={styles.card}>
-            <View style={{flexDirection:'row'}}>
-                <Text>Oi</Text>
-                <Button buttonColor="black" icon="account">Teste</Button>
-            </View>
+            <Avatar.Icon style={{ backgroundColor: backgroundColor }} size={35} icon={data.icon} />
+            <Text style={styles.cardTitle}>{data.title}</Text>
+            <ProgressBar style={styles.progressBar} progress={0.35} color={data.color} />
         </TouchableOpacity>
     )
 
