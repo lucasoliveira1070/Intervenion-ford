@@ -5,7 +5,9 @@ export const styles = StyleSheet.create({
         flexDirection: "column",
         padding: 20,
         borderRadius: 15,
-        margin:15,
+        marginTop:20,
+        marginBottom:20,
+        marginHorizontal:10,
         flex:1,
 
     },
@@ -21,8 +23,11 @@ export const styles = StyleSheet.create({
         borderRadius:20,
     },
     cardTitle:{
-        marginTop:20,
+        marginTop:1,
         fontWeight:'bold',
         fontSize:15
+    },
+    cardSubtitle:{
+        marginTop:15
     }
 })

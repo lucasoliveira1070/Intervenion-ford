@@ -14,8 +14,13 @@ export const styles = StyleSheet.create({
         fontSize: 25,
         fontWeight: "bold"
     },
-    rowView: {
-        flexDirection: "row"
+    helloView: {
+        flexDirection: "row",
+        marginTop:50
+    },
+    buttonsView:{
+        flexDirection: "row",
+        marginTop:10
     },
     navButton: {
         marginRight: 20,
@@ -38,5 +43,9 @@ export const styles = StyleSheet.create({
         flexDirection:'column',
         marginTop:20,
         flex:0.7
+    },
+    accountIcon:{
+        marginLeft:150,
+        backgroundColor:'#333333'
     }
 });

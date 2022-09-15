@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     dailyProgressCard: {
         backgroundColor: "#333333",
         flexDirection: "column",
-        flex: 0.28,
+        flex: 0.31,
         borderRadius: 15,
         marginTop: 20
     },
@@ -22,8 +22,13 @@ export const styles = StyleSheet.create({
     },
     progressBar:{
         marginLeft:15,
-        marginTop:20,
+        marginTop:10,
         marginEnd:20,
         borderRadius:20
+    },
+    cardSubTitle:{
+        fontSize: 14,
+        marginTop: 5,
+        marginLeft: 15
     }
 });

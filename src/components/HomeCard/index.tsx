@@ -16,6 +16,9 @@ export function HomeCard() {
                 <Text style={styles.cardTitle}>
                     Progresso Diário
                 </Text>
+                <Text style={styles.cardSubTitle}>
+                    Aqui você verá seu progresso diário
+                </Text>
                 <Text style={styles.detail}>35%</Text>
                 <ProgressBar style={styles.progressBar} progress={0.35} color="#1E90FF" />
             </View>

@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { RectButtonProps } from "react-native-gesture-handler";
@@ -8,16 +9,25 @@ interface Props extends RectButtonProps {
     data: {
         title: string,
         icon: string,
-        color: string
+        color: string,
+        route: string
     }
 }
 
 export default function CompetitionCard({ data }: Props) {
+    const navigation = useNavigation<any>();
     let backgroundColor: string = data.color;
+    let route: string = data.route;
+
+    function handleRoute() {
+        navigation.navigate(data.route, { teste: [] })
+    }
+
     return (
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity style={styles.card} onPress={handleRoute}>
             <Avatar.Icon style={{ backgroundColor: backgroundColor }} size={35} icon={data.icon} />
             <Text style={styles.cardTitle}>{data.title}</Text>
+            <Text style={styles.cardSubtitle}>3 New</Text>
             <ProgressBar style={styles.progressBar} progress={0.35} color={data.color} />
         </TouchableOpacity>
     )
