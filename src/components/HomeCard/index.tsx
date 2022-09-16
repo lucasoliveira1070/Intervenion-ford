@@ -1,14 +1,14 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
-import { ProgressBar, MD3Colors } from "react-native-paper";
+import { ProgressBar } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 
 export function HomeCard() {
     const navigation = useNavigation<any>();
 
     function handleAchievement(){
-        navigation.navigate('Login',{teste :[]})
+        navigation.navigate('Achievements',{teste :[]})
     }
     return (
         <TouchableOpacity onPress={handleAchievement} style={styles.dailyProgressCard}>

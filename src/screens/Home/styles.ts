@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     },
     helloText: {
         fontSize: 25,
-        fontWeight: "bold"
+        fontWeight: "bold",
     },
     helloView: {
         flexDirection: "row",
@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
         flex:0.7
     },
     accountIcon:{
-        marginLeft:150,
-        backgroundColor:'#333333'
+        marginLeft:200,
+        backgroundColor:'#333333',
     }
 });

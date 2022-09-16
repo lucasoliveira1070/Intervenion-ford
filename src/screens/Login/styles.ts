@@ -1,0 +1,40 @@
+import {StyleSheet} from 'react-native'
+
+export const styles = StyleSheet.create({
+    mainView:{
+        flexDirection:'column',
+        backgroundColor:'#1A1A1A',
+        flex:1,
+    },
+    imageView:{
+        marginTop:60,
+        flex:0.5
+    },
+    image:{
+        flex:1,
+        width:270,
+        marginLeft:50,
+        resizeMode:'center',
+    },
+    title:{
+        color:'white',
+        marginLeft:40,
+        fontWeight:'bold',
+        fontSize:40
+    },
+    bottomView:{
+        flexDirection:'column',
+        flex:0.46,
+    },
+    userInput:{
+        marginTop:40,
+        borderRadius:50
+    },
+    userInputView:{
+        padding:30,
+        flexDirection:'column'       
+    },
+    loginButton:{
+        marginTop:20
+    }
+});
