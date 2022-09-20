@@ -4,20 +4,24 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: "bold",
         marginTop: 15,
-        marginLeft: 15
+        marginLeft: 15,
+        color:'white'
     },
     dailyProgressCard: {
         backgroundColor: "#333333",
         flexDirection: "column",
-        flex: 0.31,
+        width:'100%',
+        height:'25%',
         borderRadius: 15,
-        marginTop: 20
+        marginTop: 20,
+        color:'white'
     },
     detail: {
         fontSize: 18,
         fontWeight: "bold",
         marginTop: 60,
-        marginLeft: 15
+        marginLeft: 15,
+        color:'white'
 
     },
     progressBar:{
@@ -29,6 +33,7 @@ export const styles = StyleSheet.create({
     cardSubTitle:{
         fontSize: 14,
         marginTop: 5,
-        marginLeft: 15
+        marginLeft: 15,
+        color:'white'
     }
 });

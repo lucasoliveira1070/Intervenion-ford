@@ -9,25 +9,22 @@ export const styles = StyleSheet.create({
         marginBottom:20,
         marginHorizontal:10,
         flex:1,
-
-    },
-    viewCompetitions: {
-        flexDirection: "row",
-        backgroundColor:"green",
+        color:'white'
 
     },
     progressBar:{
-        marginLeft:1,
+        width:'100%',
         marginTop:10,
-        marginEnd:1,
         borderRadius:20,
     },
     cardTitle:{
-        marginTop:1,
+        marginTop:5,
         fontWeight:'bold',
-        fontSize:15
+        fontSize:15,
+        color:'white'
     },
     cardSubtitle:{
-        marginTop:15
+        marginTop:15,
+        color:'white'
     }
 })

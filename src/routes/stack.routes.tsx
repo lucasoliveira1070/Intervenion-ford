@@ -12,12 +12,17 @@ const Stack = createStackNavigator();
 export function StackRoutes() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Login">
-                <Stack.Screen name='Home' options={{ headerShown: false }} component={Home} />
-                <Stack.Screen name='Login' options={{ headerShown: false }} component={Login} />
-                <Stack.Screen name='Achievements' options={{ headerShown: false }} component={Achievements} />
-                <Stack.Screen name='Reward' options={{ headerShown: false }} component={Reward} />
-                <Stack.Screen name='AchievementDetail' options={{ headerShown: false }} component={AchievementDetail} />
+            <Stack.Navigator
+                initialRouteName="Login"
+                screenOptions={{
+                    headerShown: false
+                }}
+            >
+                <Stack.Screen name='Home' component={Home} />
+                <Stack.Screen name='Login' component={Login} />
+                <Stack.Screen name='Achievements' component={Achievements} />
+                <Stack.Screen name='Reward' component={Reward} />
+                <Stack.Screen name='AchievementDetail' component={AchievementDetail} />
             </Stack.Navigator>
         </NavigationContainer>
 

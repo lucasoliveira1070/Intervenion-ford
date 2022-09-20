@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
-import { Button, TextInput } from "react-native-paper";
+import { View, Text, Image, StyleSheet, SafeAreaView, TextInput, Button, Keyboard } from "react-native";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import { styles } from "./styles";
 
 export function Login() {
@@ -9,40 +9,41 @@ export function Login() {
     const navigation = useNavigation<any>();
 
     function handleLogin() {
-        if(!user){
-            console.log('Digite um nome de usuário')
+        if (!user) {
+            alert('Digite um nome de usuário')
             return;
         }
-        
+
         console.log(user)
         navigation.navigate('Home', { data: { user: user } })
     }
 
     return (
-        <View style={styles.mainView}>
-            <View style={styles.imageView}>
-                <Image style={styles.image} source={require('../../../assets/icon.png')}></Image>
-                <Text style={styles.title}>Intervention Ford</Text>
-            </View>
-            <View style={styles.bottomView}>
-                <View style={styles.userInputView}>
+        <TouchableWithoutFeedback onPress={() => { Keyboard.dismiss() }}>
+            <View style={styles.mainView}>
+                <View style={styles.imageView}>
+                    <Image style={styles.image} source={require('../../../assets/icon.png')}></Image>
+                    <Text style={styles.title}>Intervention Ford</Text>
+                </View>
+                <SafeAreaView style={styles.userInputView}>
                     <TextInput
                         style={styles.userInput}
-                        mode='outlined'
-                        label="Usuário"
-                        onChangeText={user => {
-                            setUser(user);
-                            console.log(user)
-                        }} />
+                        onChangeText={setUser}
+                        placeholder='Usuário'
+                    />
+                    <TextInput
+                        style={styles.userInput}
+                        placeholder='Senha'
+                        secureTextEntry={true}
+                    />
                     <Button
-                        style={styles.loginButton}
-                        mode="contained"
-                        buttonColor="#1E90FF"
+                        title='Login'
+                        color="#1E90FF"
                         onPress={handleLogin}
-                    >Login</Button>
-                </View>
+                    ></Button>
+                </SafeAreaView>
             </View>
-        </View>
+        </TouchableWithoutFeedback>
 
     )
 }

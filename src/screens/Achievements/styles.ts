@@ -1,0 +1,40 @@
+import { StyleSheet } from 'react-native'
+export const styles = StyleSheet.create({
+    mainView:{
+        alignContent:'center',
+        justifyContent:'center',
+        backgroundColor:'#1A1A1A',
+        height:'100%'
+    },
+    title:{
+        color:'white',
+        fontWeight:'bold',
+        marginTop:15,
+        width:'100%',
+        fontSize:20,
+    },
+    header:{
+        flexDirection:'row',
+        alignContent:'center',
+        marginTop:30
+    },
+    backIcon:{
+        backgroundColor:'white',
+        borderRadius:12,
+
+    },
+    accountIcon:{
+        backgroundColor:'#333333',
+        marginLeft:'60%'
+    },
+    searchBarView:{
+        marginTop:15,
+        padding:'4%',
+    },
+    searchBar:{
+        width:'100%'
+    },
+    achievementsList:{
+        padding:'4%'
+    }
+});

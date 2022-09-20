@@ -10,7 +10,8 @@ interface Props extends RectButtonProps {
         title: string,
         icon: string,
         color: string,
-        route: string
+        route: string,
+        progress: number
     }
 }
 
@@ -28,7 +29,8 @@ export default function CompetitionCard({ data }: Props) {
             <Avatar.Icon style={{ backgroundColor: backgroundColor }} size={35} icon={data.icon} />
             <Text style={styles.cardTitle}>{data.title}</Text>
             <Text style={styles.cardSubtitle}>3 New</Text>
-            <ProgressBar style={styles.progressBar} progress={0.35} color={data.color} />
+            <ProgressBar style={styles.progressBar} progress={data.progress} color={data.color} />
+
         </TouchableOpacity>
     )
 
