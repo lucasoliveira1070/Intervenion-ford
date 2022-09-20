@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     },
     helloView: {
         flexDirection: "row",
-        marginTop:30,
+        marginTop:2,
         alignContent:'center',
     },
     buttonsView:{

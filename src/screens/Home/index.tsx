@@ -1,7 +1,6 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
 import React, { useState } from "react";
 import { View, Text, Image, ScrollView, Pressable } from "react-native";
-import { RectButtonProps } from "react-native-gesture-handler";
 import { Avatar, BottomNavigation, IconButton } from "react-native-paper";
 import CompetitionCard from "../../components/CompetitionsCard";
 import { HomeCard } from "../../components/HomeCard";
@@ -18,8 +17,11 @@ export function Home() {
     const navigation = useNavigation<any>();
     const { data } = route.params as params;
 
-    const handleButtonAchievements = () => {
-        navigation.navigate('Achievements',{});
+    function handleSideDrawer() {
+        navigation.navigate('AchievementDetail',{})
+    }
+    function handleButtonAchievements() {
+        navigation.navigate('Achievements', {});
     }
 
     return (
@@ -32,7 +34,7 @@ export function Home() {
                     iconColor='white'
                     size={30}
                     mode='contained-tonal'
-                    onPress={() => console.log('Pressed')}
+                    onPress={handleSideDrawer}
                 />
 
             </View>

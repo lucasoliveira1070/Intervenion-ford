@@ -4,9 +4,15 @@ import { styles } from "./styles";
 import { IconButton, Searchbar } from "react-native-paper";
 import { ScrollView, TouchableWithoutFeedback } from "react-native-gesture-handler";
 import Achievement from "../../components/Achievement";
+import { useNavigation } from "@react-navigation/native";
 
 export function Achievements() {
+    const navigation = useNavigation();
     const [searchQuery, setSearchQuery] = React.useState('');
+
+    function handleReturnButton(){
+        navigation.goBack();
+    }
 
     const onChangeSearchQuery = (query: string) => setSearchQuery(query)
     return (
@@ -17,7 +23,9 @@ export function Achievements() {
                         <IconButton
                             icon="arrow-left"
                             size={26}
+                            onPress={handleReturnButton}
                             style={styles.backIcon}
+                            iconColor='white'
                         />
                     </View>
                     <View style={{ width: '33%' }}>
@@ -50,7 +58,8 @@ export function Achievements() {
                     <Achievement data={{title:'Ford Enthusiast',color:'#7FFF62',icon:'medal',route:'Reward1',aquired:false}} />
                     <Achievement data={{title:'2 Ford products',color:'#1E90FF',icon:'account-group',route:'Reward1',aquired:false}} />
                     <Achievement data={{title:'200 Km',color:'#FFAB1E',icon:'trophy-variant',route:'Reward1',aquired:false}} />
-                    
+                    <Achievement data={{title:'200 Km',color:'#FFAB1E',icon:'trophy-variant',route:'Reward1',aquired:false}} />
+                    <Achievement data={{title:'200 Km',color:'#FFAB1E',icon:'trophy-variant',route:'Reward1',aquired:false}} />
                 </ScrollView>
             </View>
         </TouchableWithoutFeedback>
