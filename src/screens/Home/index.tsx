@@ -1,40 +1,29 @@
-import { useNavigation, useRoute } from "@react-navigation/native";
-import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import React, { useContext, useState } from "react";
 import { View, Text, Image, ScrollView, Pressable } from "react-native";
 import { Avatar, BottomNavigation, IconButton } from "react-native-paper";
 import CompetitionCard from "../../components/CompetitionsCard";
 import { HomeCard } from "../../components/HomeCard";
+import { UserContext } from "../../contexts/UserContext";
 import { styles } from "./styles";
 
-interface params {
-    data: {
-        user: string
-    }
-
-}
 export function Home() {
-    const route = useRoute();
     const navigation = useNavigation<any>();
-    const { data } = route.params as params;
-
-    function handleSideDrawer() {
-        navigation.navigate('AchievementDetail',{})
-    }
+    const {user} = useContext(UserContext)
+    
     function handleButtonAchievements() {
         navigation.navigate('Achievements', {});
     }
-
     return (
         <View style={styles.mainView}>
             <View style={styles.helloView}>
-                <Text style={styles.helloText}>Hello, {data.user}</Text>
+                <Text style={styles.helloText}>Hello, {user}</Text>
                 <IconButton
                     style={styles.accountIcon}
                     icon="account"
                     iconColor='white'
                     size={30}
                     mode='contained-tonal'
-                    onPress={handleSideDrawer}
                 />
 
             </View>

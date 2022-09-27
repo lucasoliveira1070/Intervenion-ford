@@ -10,7 +10,8 @@ interface Props extends RectButtonProps {
         icon: string,
         color: string,
         route: string,
-        aquired: boolean
+        aquired: boolean,
+        onPress: () => void;
     }
 }
 export default function Achievement({ data }: Props) {
@@ -18,7 +19,7 @@ export default function Achievement({ data }: Props) {
     let acquire: boolean = data.aquired;
 
     return (
-        <TouchableOpacity style={[styles.card, acquire ? styles.cardAchievementAcquired : styles.card]}>
+        <TouchableOpacity onPress={data.onPress} style={[styles.card, acquire ? styles.cardAchievementAcquired : styles.card]}>
             <View style={{ flexDirection: 'row' }}>
                 <Avatar.Icon style={{ backgroundColor: backgroundColor, borderRadius: 12 }} size={35} icon={data.icon} />
                 <Text style={styles.cardTitle}>{data.title}</Text>

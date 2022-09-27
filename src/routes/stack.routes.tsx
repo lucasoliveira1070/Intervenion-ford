@@ -7,28 +7,31 @@ import { Achievements } from '../screens/Achievements'
 import { Reward } from '../screens/Reward'
 import { AchievementDetail } from '../screens/AchievementDetail'
 import { StatusBar } from "react-native";
+import UserContextProvider, { UserContext } from "../contexts/UserContext";
 
 const Stack = createStackNavigator();
 
 export function StackRoutes() {
     return (
         <NavigationContainer>
-            <StatusBar
-                backgroundColor="white"
-                barStyle="dark-content"
-            />
-            <Stack.Navigator
-                initialRouteName="Login"
-                screenOptions={{
-                    headerShown: false
-                }}
-            >
-                <Stack.Screen name='Login' component={Login} />
-                <Stack.Screen name='Home' component={Home} />
-                <Stack.Screen name='Achievements' component={Achievements} />
-                <Stack.Screen name='Reward' component={Reward} />
-                <Stack.Screen name='AchievementDetail' component={AchievementDetail} />
-            </Stack.Navigator>
+            <UserContextProvider>
+                <StatusBar
+                    backgroundColor="white"
+                    barStyle="dark-content"
+                />
+                <Stack.Navigator
+                    initialRouteName="Login"
+                    screenOptions={{
+                        headerShown: false
+                    }}
+                >
+                    <Stack.Screen name='Login' component={Login} />
+                    <Stack.Screen name='Home' component={Home} />
+                    <Stack.Screen name='Achievements' component={Achievements} />
+                    <Stack.Screen name='Reward' component={Reward} />
+                    <Stack.Screen name='AchievementDetail' component={AchievementDetail} />
+                </Stack.Navigator>
+            </UserContextProvider>
         </NavigationContainer>
 
     )

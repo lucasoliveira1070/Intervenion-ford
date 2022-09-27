@@ -1,21 +1,21 @@
-import { useNavigation } from "@react-navigation/native";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { View, Text, Image, StyleSheet, SafeAreaView, TextInput, Button, Keyboard } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import { styles } from "./styles";
+import { UserContext } from "../../contexts/UserContext";
 
 export function Login() {
     const [user, setUser] = useState('');
-    const navigation = useNavigation<any>();
+    const [password, setPassword] = useState('');
+
+    const { signIn } = useContext(UserContext);
 
     function handleLogin() {
         if (!user) {
             alert('Digite um nome de usuário')
             return;
         }
-
-        console.log(user)
-        navigation.navigate('Home', { data: { user: user } })
+        signIn(user, password)
     }
 
     return (
@@ -33,6 +33,7 @@ export function Login() {
                     />
                     <TextInput
                         style={styles.userInput}
+                        onChangeText={setPassword}
                         placeholder='Senha'
                         secureTextEntry={true}
                     />

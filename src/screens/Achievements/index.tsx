@@ -7,11 +7,15 @@ import Achievement from "../../components/Achievement";
 import { useNavigation } from "@react-navigation/native";
 
 export function Achievements() {
-    const navigation = useNavigation();
+    const navigation = useNavigation<any>();
     const [searchQuery, setSearchQuery] = React.useState('');
 
-    function handleReturnButton(){
+    function handleReturnButton() {
         navigation.goBack();
+    }
+
+    function handleAchievementDetail() {
+        navigation.navigate('AchievementDetail', {})
     }
 
     const onChangeSearchQuery = (query: string) => setSearchQuery(query)
@@ -50,16 +54,16 @@ export function Achievements() {
                     />
                 </View>
                 <ScrollView style={styles.achievementsList}>
-                    <Achievement data={{title:'First 100 Km',color:'#FFAB1E',icon:'trophy-variant',route:'Reward1',aquired:true}} />
-                    <Achievement data={{title:'Ford Fan',color:'#7FFF62',icon:'medal',route:'Reward1',aquired:true}} />
-                    <Achievement data={{title:'First Year',color:'#BC62FF',icon:'check-bold',route:'Reward1',aquired:true}} />
-                    <Achievement data={{title:'3 years in a row',color:'#1E90FF',icon:'account-group',route:'Reward1',aquired:true}} />
-                    <Achievement data={{title:'Second Year',color:'#BC62FF',icon:'check-bold',route:'Reward1',aquired:true}} />
-                    <Achievement data={{title:'Ford Enthusiast',color:'#7FFF62',icon:'medal',route:'Reward1',aquired:false}} />
-                    <Achievement data={{title:'2 Ford products',color:'#1E90FF',icon:'account-group',route:'Reward1',aquired:false}} />
-                    <Achievement data={{title:'200 Km',color:'#FFAB1E',icon:'trophy-variant',route:'Reward1',aquired:false}} />
-                    <Achievement data={{title:'200 Km',color:'#FFAB1E',icon:'trophy-variant',route:'Reward1',aquired:false}} />
-                    <Achievement data={{title:'200 Km',color:'#FFAB1E',icon:'trophy-variant',route:'Reward1',aquired:false}} />
+                    <Achievement data={{ title: 'First 100 Km', color: '#FFAB1E', icon: 'trophy-variant', route: 'Reward1', aquired: true, onPress: handleAchievementDetail }} />
+                    <Achievement data={{ title: 'Ford Fan', color: '#7FFF62', icon: 'medal', route: 'Reward1', aquired: true, onPress: handleAchievementDetail }} />
+                    <Achievement data={{ title: 'First Year', color: '#BC62FF', icon: 'check-bold', route: 'Reward1', aquired: true, onPress: handleAchievementDetail }} />
+                    <Achievement data={{ title: '3 years in a row', color: '#1E90FF', icon: 'account-group', route: 'Reward1', aquired: true, onPress: handleAchievementDetail }} />
+                    <Achievement data={{ title: 'Second Year', color: '#BC62FF', icon: 'check-bold', route: 'Reward1', aquired: true, onPress: handleAchievementDetail }} />
+                    <Achievement data={{ title: 'Ford Enthusiast', color: '#7FFF62', icon: 'medal', route: 'Reward1', aquired: false, onPress: handleAchievementDetail }} />
+                    <Achievement data={{ title: '2 Ford products', color: '#1E90FF', icon: 'account-group', route: 'Reward1', aquired: false, onPress: handleAchievementDetail }} />
+                    <Achievement data={{ title: '200 Km', color: '#FFAB1E', icon: 'trophy-variant', route: 'Reward1', aquired: false, onPress: handleAchievementDetail }} />
+                    <Achievement data={{ title: '200 Km', color: '#FFAB1E', icon: 'trophy-variant', route: 'Reward1', aquired: false, onPress: handleAchievementDetail }} />
+                    <Achievement data={{ title: '200 Km', color: '#FFAB1E', icon: 'trophy-variant', route: 'Reward1', aquired: false, onPress: handleAchievementDetail }} />
                 </ScrollView>
             </View>
         </TouchableWithoutFeedback>
