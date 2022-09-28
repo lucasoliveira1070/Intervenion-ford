@@ -11,8 +11,8 @@ export function Login() {
     const { signIn } = useContext(UserContext);
 
     function handleLogin() {
-        if (!user) {
-            alert('Digite um nome de usuário')
+        if (!user || !password) {
+            alert('Digite um nome de usuário e/ou senha.')
             return;
         }
         signIn(user, password)

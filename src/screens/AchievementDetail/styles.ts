@@ -13,7 +13,6 @@ export const styles = StyleSheet.create({
         borderRadius: 50,
         height: 170,
         width: 175,
-
     },
     dateAcquired: {
         color: 'white',
@@ -33,12 +32,14 @@ export const styles = StyleSheet.create({
 
     },
     backButtonView: {
-        width: '100%'
+        width: '100%',
+        marginTop:'4%'
     },
     description: {
         color: '#7F7A7A',
         fontWeight: 'bold',
         fontSize: 15,
+        marginBottom:3
     },
     descriptionCardView: {
         width: '80%',
@@ -48,7 +49,7 @@ export const styles = StyleSheet.create({
         borderRadius: 20,
         borderColor: 'green',
         borderWidth: 1,
-        marginBottom: '10%'
+        marginBottom: '7%'
     },
     descriptionCardText: {
         color: 'white',
@@ -66,7 +67,16 @@ export const styles = StyleSheet.create({
     },
     progressBar: {
         width: '60%',
-        marginHorizontal: '5%'
+        marginHorizontal: '5%',
+        marginBottom:'1%',
+        borderRadius:20
+    },
+    statusProgressBar:{
+        color:'white',
+        fontWeight:'bold',
+        fontSize:18,
+        marginLeft:'26%',
+        marginTop:'5%'
     },
     nextStepText: {
         color: 'white',
@@ -76,7 +86,12 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     shareButton: {
-        marginBottom: '10%'
+        marginBottom: '10%',
+        marginTop:'2%'
+    },
+    claimButton:{
+        marginBottom: '15%',
+        marginTop:'2%'
     },
     nextStepCardView: {
         width: '80%',
@@ -84,9 +99,9 @@ export const styles = StyleSheet.create({
         height: '10%',
         paddingVertical: 10,
         borderRadius: 20,
-        borderColor: 'green',
+        borderColor: '#7F7A7A',
         borderWidth: 1,
-        marginBottom: '30%'
+        marginBottom: '8%'
 
     }
 });

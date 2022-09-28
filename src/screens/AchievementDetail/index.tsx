@@ -48,15 +48,12 @@ export function AchievementDetail() {
             <View style={styles.nextStepCardView}>
                 <View style={{ flexDirection: 'row', flex: 1 }}>
                     <Text style={styles.nextStepText}>Drive 200 Kilometers</Text>
-                    <IconButton
-                        style={styles.checkIcon}
-                        icon="check-circle"
-                        iconColor='green'
-                        size={30}
-                    />
+                    <Text style={styles.statusProgressBar}>50%</Text>
                 </View>
                 <ProgressBar style={styles.progressBar} progress={0.40} color='#FFAB1E'/>
             </View>
+
+            <Button icon='gift-open' style={styles.claimButton} buttonColor="#FFAB1E" mode="contained">Claim Reward</Button>
         </View>
     )
 }
