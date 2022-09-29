@@ -10,7 +10,8 @@ export const styles = StyleSheet.create({
         fontSize: 25,
         fontWeight: "bold",
         color:'white',
-        marginTop:10
+        marginTop:10,
+        flexWrap:'wrap'
     },
     helloView: {
         flexDirection: "row",
@@ -33,7 +34,8 @@ export const styles = StyleSheet.create({
     competitionsTitle:{
         fontWeight:'bold',
         fontSize:20,
-        color:'white'
+        color:'white',
+        marginLeft:'2%'
 
     },
     competitionsViewUpper:{

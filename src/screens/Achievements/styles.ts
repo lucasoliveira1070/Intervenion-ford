@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     },
     accountIcon:{
         backgroundColor:'#333333',
-        marginLeft:'60%'
+        marginLeft:'49%'
     },
     searchBarView:{
         marginTop:15,

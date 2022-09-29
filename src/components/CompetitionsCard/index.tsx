@@ -28,7 +28,7 @@ export default function CompetitionCard({ data }: Props) {
         <TouchableOpacity style={styles.card} onPress={handleRoute}>
             <Avatar.Icon style={{ backgroundColor: backgroundColor }} size={35} icon={data.icon} />
             <Text style={styles.cardTitle}>{data.title}</Text>
-            <Text style={styles.cardSubtitle}>3 New</Text>
+            <Text style={styles.cardSubtitle}>3 Novos</Text>
             <ProgressBar style={styles.progressBar} progress={data.progress} color={data.color} />
 
         </TouchableOpacity>

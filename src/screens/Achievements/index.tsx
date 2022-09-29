@@ -32,8 +32,8 @@ export function Achievements() {
                             iconColor='white'
                         />
                     </View>
-                    <View style={{ width: '33%' }}>
-                        <Text style={styles.title}>Achievements</Text>
+                    <View style={{ width: '33%',marginLeft:'4%' }}>
+                        <Text style={styles.title}>Conquistas</Text>
                     </View>
                     <View style={{ width: '33%' }}>
                         <IconButton
@@ -48,7 +48,7 @@ export function Achievements() {
                 <View style={styles.searchBarView}>
                     <Searchbar
                         style={styles.searchBar}
-                        placeholder="Search"
+                        placeholder="Pesquisar"
                         onChangeText={onChangeSearchQuery}
                         value={searchQuery}
                     />

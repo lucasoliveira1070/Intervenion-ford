@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useContext, useState } from "react";
-import { View, Text, Image, ScrollView, Pressable } from "react-native";
-import { Avatar, BottomNavigation, IconButton } from "react-native-paper";
+import React, { useContext } from "react";
+import { View, Text, ScrollView, TouchableOpacity } from "react-native";
+import { IconButton } from "react-native-paper";
 import CompetitionCard from "../../components/CompetitionsCard";
 import { HomeCard } from "../../components/HomeCard";
 import { UserContext } from "../../contexts/UserContext";
@@ -17,7 +17,7 @@ export function Home() {
     return (
         <View style={styles.mainView}>
             <View style={styles.helloView}>
-                <Text style={styles.helloText}>Hello, {user}</Text>
+                <Text style={styles.helloText}>Olá, {user}</Text>
                 <IconButton
                     style={styles.accountIcon}
                     icon="account"
@@ -28,33 +28,33 @@ export function Home() {
 
             </View>
             <View style={styles.buttonsView}>
-                <Pressable style={styles.navButton} >
+                <TouchableOpacity style={styles.navButton} >
                     <Text style={{
                         color: 'white',
                         fontWeight: "bold",
-                    }}>Overview</Text>
-                </Pressable>
-                <Pressable onPress={handleButtonAchievements} style={styles.navButton}>
+                    }}>Visão Geral</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={handleButtonAchievements} style={styles.navButton}>
                     <Text style={{
                         color: 'white',
                         fontWeight: "bold",
-                    }}>Achievements</Text>
-                </Pressable>
+                    }}>Conquistas</Text>
+                </TouchableOpacity>
             </View>
             <HomeCard data={{ progress: 0.50 }} />
             <View style={styles.competitionsViewUpper}>
                 <View style={{ flexDirection: 'column' }}>
-                    <Text style={styles.competitionsTitle}>Competitions</Text>
+                    <Text style={styles.competitionsTitle}>Competições</Text>
                     <View style={{ flexDirection: 'row' }}>
                         <View style={{ flexDirection: 'row', flex: 1 }}>
-                            <CompetitionCard data={{ title: 'Ford Family', icon: 'account-group', color: '#1E90FF', route: 'Login', progress: 0.30 }} />
-                            <CompetitionCard data={{ title: 'Ford Trip', icon: 'trophy-variant', color: '#FFAB1E', route: 'Login', progress: 0.50 }} />
+                            <CompetitionCard data={{ title: 'Ford Family', icon: 'account-group', color: '#1E90FF', route: 'Home', progress: 0.30 }} />
+                            <CompetitionCard data={{ title: 'Ford Trip', icon: 'trophy-variant', color: '#FFAB1E', route: 'Home', progress: 0.50 }} />
                         </View>
                     </View>
                     <View style={{ flexDirection: 'row' }}>
                         <View style={{ flexDirection: 'row', flex: 1 }}>
-                            <CompetitionCard data={{ title: 'While Ford', icon: 'check-bold', color: '#BC62FF', route: 'Login', progress: 0.60 }} />
-                            <CompetitionCard data={{ title: 'Ford Fidelity', icon: 'medal', color: '#7FFF62', route: 'Login', progress: 0.20 }} />
+                            <CompetitionCard data={{ title: 'While Ford', icon: 'check-bold', color: '#BC62FF', route: 'Home', progress: 0.60 }} />
+                            <CompetitionCard data={{ title: 'Ford Fidelity', icon: 'medal', color: '#7FFF62', route: 'Home', progress: 0.20 }} />
                         </View>
                     </View>
                 </View>
