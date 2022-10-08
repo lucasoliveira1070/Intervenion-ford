@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { View, Text, Image, StyleSheet, SafeAreaView, TextInput, Button, Keyboard } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import { styles } from "./styles";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext } from "../../contexts/User/UserContext";
 
 export function Login() {
     const [user, setUser] = useState('');
@@ -15,7 +15,7 @@ export function Login() {
             alert('Digite um nome de usuário e/ou senha.')
             return;
         }
-        signIn(user, password)
+        signIn()
     }
 
     return (

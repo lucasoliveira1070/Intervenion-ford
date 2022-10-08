@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { styles } from "./styles";
 import { IconButton } from "react-native-paper";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext } from "../../contexts/User/UserContext";
 
 export function Reward() {
     const navigation = useNavigation<any>();
@@ -43,7 +43,7 @@ export function Reward() {
             </View>
             <View style={styles.descriptionCardView}>
                 <View style={{ flexDirection: 'row', flex: 1 }}>
-                    <Text style={styles.descriptionCardText}>{user}, graças a nossa parceria com a Goodyear, estamos felizes em lhe oferecer 2 trocas de pneus gratuitas.</Text>
+                    <Text style={styles.descriptionCardText}>{user?.name}, graças a nossa parceria com a Goodyear, estamos felizes em lhe oferecer 2 trocas de pneus gratuitas.</Text>
                 </View>
             </View>
             <View style={styles.cardTitle}>

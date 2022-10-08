@@ -4,7 +4,7 @@ import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { IconButton } from "react-native-paper";
 import CompetitionCard from "../../components/CompetitionsCard";
 import { HomeCard } from "../../components/HomeCard";
-import { UserContext } from "../../contexts/UserContext";
+import { UserContext } from "../../contexts/User/UserContext";
 import { styles } from "./styles";
 
 export function Home() {
@@ -17,7 +17,7 @@ export function Home() {
     return (
         <View style={styles.mainView}>
             <View style={styles.helloView}>
-                <Text style={styles.helloText}>Olá, {user}</Text>
+                <Text style={styles.helloText}>Olá, {user?.name}</Text>
                 <IconButton
                     style={styles.accountIcon}
                     icon="account"

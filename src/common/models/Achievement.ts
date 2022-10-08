@@ -2,7 +2,10 @@ import { Reward } from "./Reward";
 
 export interface Achievement {
     id: number;
-    name: string;
+    title: string;
     description: string;
+    icon:string;
+    color:string;
+    acquired:boolean;
     reward: Reward;
 }

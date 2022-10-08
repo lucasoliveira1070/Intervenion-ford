@@ -1,5 +1,6 @@
 import React from "react"
-import { RectButtonProps, TouchableOpacity } from "react-native-gesture-handler"
+import { TouchableOpacity } from "react-native"
+import { RectButtonProps } from "react-native-gesture-handler"
 import { Text, View } from "react-native"
 import { styles } from "./styles"
 import { Avatar } from "react-native-paper"

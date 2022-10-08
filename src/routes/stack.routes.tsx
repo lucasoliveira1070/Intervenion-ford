@@ -7,7 +7,7 @@ import { Achievements } from '../screens/Achievements'
 import { Reward } from '../screens/Reward'
 import { AchievementDetail } from '../screens/AchievementDetail'
 import { StatusBar } from "react-native";
-import UserContextProvider, { UserContext } from "../contexts/UserContext";
+import { UserContextProvider } from "../contexts/User/UserProvider";
 
 const Stack = createStackNavigator();
 
