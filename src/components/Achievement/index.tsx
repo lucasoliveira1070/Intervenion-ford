@@ -12,6 +12,7 @@ interface Props extends RectButtonProps {
         color: string,
         route: string,
         aquired: boolean,
+        imagePath:string,
         onPress: () => void;
     }
 }

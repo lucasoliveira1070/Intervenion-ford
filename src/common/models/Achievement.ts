@@ -6,6 +6,8 @@ export interface Achievement {
     description: string;
     icon:string;
     color:string;
+    route:string;
     acquired:boolean;
+    imagePath:string;
     reward: Reward;
 }

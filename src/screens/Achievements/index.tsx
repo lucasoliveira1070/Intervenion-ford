@@ -16,11 +16,6 @@ export function Achievements() {
         navigation.goBack();
     }
 
-    function handleAchievementDetail() {
-        console.log('botao apertado')
-        navigation.navigate('AchievementDetail', {})
-    }
-
     const onChangeSearchQuery = (query: string) => setSearchQuery(query)
     return (
         <TouchableWithoutFeedback onPress={() => { Keyboard.dismiss() }}>
@@ -59,7 +54,11 @@ export function Achievements() {
                 <ScrollView style={styles.achievementsList}>
                     {user.user?.achievements?.map(achievement => {
                         return (
-                            <Achievement key={achievement.id} data={{ title: achievement.title, color: '#FFAB1E', icon: 'trophy-variant', route: 'Reward1', aquired: false, onPress: handleAchievementDetail }} />
+                            <Achievement key={achievement.id} data={{
+                                title: achievement.title, color: achievement.color, icon: achievement.icon, route: achievement.route, aquired: achievement.acquired, imagePath: achievement.imagePath, onPress: () => {
+                                    navigation.navigate('AchievementDetail', { achievement })
+                                }
+                            }} />
                         )
                     })}
                 </ScrollView>
