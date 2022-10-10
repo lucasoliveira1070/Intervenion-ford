@@ -35,6 +35,8 @@ export const styles = StyleSheet.create({
         width:'100%'
     },
     achievementsList:{
-        padding:'4%'
+        padding:'4%',
+        marginBottom:10,
+        flex:1
     }
 });

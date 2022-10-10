@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     },
     buttonsView:{
         flexDirection: "row",
-        marginTop: 15,
+        marginTop: 30,
     },
     navButton: {
         marginRight: 20,
@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
         marginTop:20,
     },
     accountIcon:{
-        marginLeft:180,
+        marginLeft:100,
         backgroundColor:'#333333',
     }
 });

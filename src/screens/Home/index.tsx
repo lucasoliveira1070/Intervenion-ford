@@ -4,12 +4,10 @@ import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { IconButton } from "react-native-paper";
 import CompetitionCard from "../../components/CompetitionsCard";
 import { HomeCard } from "../../components/HomeCard";
-import { UserContext } from "../../contexts/User/UserContext";
 import { styles } from "./styles";
 
 export function Home() {
     const navigation = useNavigation<any>();
-    const {user} = useContext(UserContext)
     
     function handleButtonAchievements() {
         navigation.navigate('Achievements', {});
@@ -17,7 +15,7 @@ export function Home() {
     return (
         <View style={styles.mainView}>
             <View style={styles.helloView}>
-                <Text style={styles.helloText}>Olá, {user?.name}</Text>
+                <Text style={styles.helloText}>Seja Bem-Vindo(a)</Text>
                 <IconButton
                     style={styles.accountIcon}
                     icon="account"
@@ -47,14 +45,14 @@ export function Home() {
                     <Text style={styles.competitionsTitle}>Competições</Text>
                     <View style={{ flexDirection: 'row' }}>
                         <View style={{ flexDirection: 'row', flex: 1 }}>
-                            <CompetitionCard data={{ title: 'Ford Family', icon: 'account-group', color: '#1E90FF', route: 'Home', progress: 0.30 }} />
-                            <CompetitionCard data={{ title: 'Ford Trip', icon: 'trophy-variant', color: '#FFAB1E', route: 'Home', progress: 0.50 }} />
+                            <CompetitionCard data={{ title: 'Ford Family', icon: 'account-group', color: '#1E90FF', route: 'Achievements', progress: 0.30 }} />
+                            <CompetitionCard data={{ title: 'Ford Trip', icon: 'trophy-variant', color: '#FFAB1E', route: 'Achievements', progress: 0.50 }} />
                         </View>
                     </View>
                     <View style={{ flexDirection: 'row' }}>
                         <View style={{ flexDirection: 'row', flex: 1 }}>
-                            <CompetitionCard data={{ title: 'While Ford', icon: 'check-bold', color: '#BC62FF', route: 'Home', progress: 0.60 }} />
-                            <CompetitionCard data={{ title: 'Ford Fidelity', icon: 'medal', color: '#7FFF62', route: 'Home', progress: 0.20 }} />
+                            <CompetitionCard data={{ title: 'While Ford', icon: 'check-bold', color: '#BC62FF', route: 'Achievements', progress: 0.60 }} />
+                            <CompetitionCard data={{ title: 'Ford Fidelity', icon: 'medal', color: '#7FFF62', route: 'Achievements', progress: 0.20 }} />
                         </View>
                     </View>
                 </View>

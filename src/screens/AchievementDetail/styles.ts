@@ -75,8 +75,9 @@ export const styles = StyleSheet.create({
         color:'white',
         fontWeight:'bold',
         fontSize:18,
-        marginLeft:'26%',
-        marginTop:'5%'
+        alignSelf:'flex-end',
+        marginLeft:'10%',
+        marginTop:'2%'
     },
     nextStepText: {
         color: 'white',

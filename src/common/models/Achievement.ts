@@ -9,5 +9,6 @@ export interface Achievement {
     route:string;
     acquired:boolean;
     imagePath:string;
+    nextStep:string;
     reward: Reward;
 }

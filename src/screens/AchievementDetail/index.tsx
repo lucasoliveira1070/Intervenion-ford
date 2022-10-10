@@ -1,29 +1,41 @@
-import { View, Text, Image, Pressable } from "react-native";
+import { View, Text, Image, Share } from "react-native";
 import { Button, ProgressBar } from 'react-native-paper';
-import React, { useContext } from "react";
-import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { styles } from "./styles";
 import { IconButton } from "react-native-paper";
-import { RectButtonProps } from "react-native-gesture-handler"
+import { Achievement } from "../../common/models/Achievement";
 
-interface Props extends RectButtonProps {
-    data: {
-        title: string,
-        description: string,
-        acquired: boolean,
-        color: string,
-        imagePath: string
-    }
+interface Params {
+    achievement: Achievement
 }
-export function AchievementDetail({ data }: Props) {
+export function AchievementDetail() {
     const navigation = useNavigation<any>();
+    const route = useRoute();
+    const { achievement } = route.params as Params;
+
+    const onShare = async () => {
+        try {
+            const result = await Share.share({
+                message:
+                    'Compartilhar',
+            });
+        } catch (error) {
+            alert('Ocorreu um erro!');
+        }
+    };
 
     function handleBack() {
         navigation.goBack();
     }
 
     function handleClaimReward() {
-        navigation.navigate('Reward', {})
+        navigation.navigate('Reward', {
+            data: {
+                achievementId: achievement.id,
+                color: achievement.color
+            }
+        })
     }
 
     return (
@@ -37,22 +49,17 @@ export function AchievementDetail({ data }: Props) {
                     iconColor='white'
                 />
             </View>
-            <Image style={styles.image} source={require("../../../assets/100km-icon.jpg")}></Image>
-            <Text style={styles.title}>{data.title}</Text>
+            <Image style={styles.image} source={require("../../../assets/achievement.jpg")}></Image>
+            <Text style={styles.title}>{achievement.title}</Text>
             <Text style={styles.dateAcquired}>02/03/2022</Text>
-            <Button icon='share' style={styles.shareButton} buttonColor={data.color} mode="contained">Share</Button>
+            <Button icon='share' onPress={onShare} style={styles.shareButton} buttonColor={achievement.color} mode="contained">Share</Button>
             <View style={styles.cardTitle}>
                 <Text style={styles.description}>Descrição</Text>
             </View>
             <View style={styles.descriptionCardView}>
                 <View style={{ flexDirection: 'row', flex: 1 }}>
-                    <Text style={styles.descriptionCardText}>{data.description}</Text>
-                    <IconButton
-                        style={styles.checkIcon}
-                        icon="check-circle"
-                        iconColor='green'
-                        size={30}
-                    />
+                    <Text style={styles.descriptionCardText}>{achievement.description}</Text>
+
                 </View>
             </View>
 
@@ -61,14 +68,18 @@ export function AchievementDetail({ data }: Props) {
             </View>
             <View style={styles.nextStepCardView}>
                 <View style={{ flexDirection: 'row', flex: 1 }}>
-                    <Text style={styles.nextStepText}>Dirija 200 Kilômetros</Text>
-                    <Text style={styles.statusProgressBar}>50%</Text>
+                    <View style={{ flex: 1 }}>
+                        <Text style={styles.nextStepText}>{achievement.nextStep}</Text>
+                    </View>
+                    <View style={{ paddingRight: 10, paddingTop: 3 }}>
+                        <Text style={styles.statusProgressBar}>50%</Text>
+                    </View>
                 </View>
-                <ProgressBar style={styles.progressBar} progress={0.28} color={data.color} />
+                <ProgressBar style={styles.progressBar} progress={0.28} color={achievement.color} />
             </View>
 
 
-            <Button icon='gift' style={styles.claimButton} buttonColor={data.color} mode="contained" onPress={handleClaimReward}>Ver Recompensa</Button>
+            <Button icon='gift' style={styles.claimButton} buttonColor={achievement.color} mode="contained" onPress={handleClaimReward}>Ver Recompensa</Button>
         </View>
     )
 }

@@ -1,7 +1,8 @@
 export interface Reward {
     id: number;
-    name: string;
+    title: string;
     description: string;
     expiration: Date;
+    sponsor:string;
 
 }
