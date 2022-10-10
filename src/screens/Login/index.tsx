@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { View, Text, Image, StyleSheet, SafeAreaView, TextInput, Button, Keyboard } from "react-native";
+import { View, Text, Image, StyleSheet, SafeAreaView, TextInput, Button, Keyboard, ActivityIndicator } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import { styles } from "./styles";
 import { UserContext } from "../../contexts/User/UserContext";
@@ -7,15 +7,19 @@ import { UserContext } from "../../contexts/User/UserContext";
 export function Login() {
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
+    const [isLoading, setLoading] = useState(false);
 
     const { signIn } = useContext(UserContext);
 
-    function handleLogin() {
+    async function handleLogin() {
+        setLoading(true)
+        setTimeout(() => {
+            signIn(user), setLoading(false)
+        }, 1500)
         if (!user || !password) {
             alert('Digite um nome de usuário e/ou senha.')
             return;
         }
-        signIn()
     }
 
     return (
@@ -42,6 +46,7 @@ export function Login() {
                         color="#1E90FF"
                         onPress={handleLogin}
                     ></Button>
+                    <ActivityIndicator style={styles.activityIndicator} size='large' animating={isLoading} color='white' />
                 </SafeAreaView>
             </View>
         </TouchableWithoutFeedback>

@@ -43,5 +43,8 @@ export const styles = StyleSheet.create({
     },
     loginButton: {
         marginTop: 20
+    },
+    activityIndicator:{
+        marginTop:20
     }
 });

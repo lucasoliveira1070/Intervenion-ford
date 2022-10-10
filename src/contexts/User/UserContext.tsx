@@ -3,7 +3,7 @@ import { User } from '../../common/models/User';
 
 export type UserContext = {
     user: User | null
-    signIn: () => void;    
+    signIn: (username:string) =>void;    
 }
 
 export const UserContext = createContext<UserContext>(null!);

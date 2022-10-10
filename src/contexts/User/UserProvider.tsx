@@ -7,23 +7,21 @@ import { api } from "../../hooks/useApi";
 export const UserContextProvider = ({ children }: { children: ReactNode }): ReactElement => {
     const [user, setUser] = useState<User>(null!);
     const navigation = useNavigation<any>();
-    const USER_ID = 'b8712c2b-03e6-4881-a5d1-7e283c7eafb2';
 
-    useEffect(() => {
-        async function fetchUser() {
-            try {
-                const user = await api.get<User>(`users/${USER_ID}`)
-                setUser(user.data)
-            } catch (error) {
-                console.log(error)
+    const signIn = async (username: string) => {
+        try {
+            const user = await api.get<User>(`users/findbyusername/${username}`)
+            if (user.data.id == null || user.data.id == undefined) {
+                alert('Usuário não encontrado.')
+                return;
             }
 
+            setUser(user.data)
+            navigation.navigate('Home', {})
+        } catch (error) {
+            console.log(error)
         }
-        fetchUser();
-    }, [])
 
-    const signIn = async () => {
-        navigation.navigate('Home', {})
     }
 
     return (
